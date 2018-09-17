@@ -38,6 +38,19 @@ public class HystrixParam {
 
     private int queueSizeRejectionThreshold = 10;
 
+    public HystrixParam() {}
+
+    public HystrixParam(String groupKey, String commandKey, String threadPoolKey, int timeoutMilliseconds, int coreSize, int maximumSize, int maxQueueSize, int queueSizeRejectionThreshold) {
+        this.groupKey = groupKey;
+        this.commandKey = commandKey;
+        this.threadPoolKey = threadPoolKey;
+        this.timeoutMilliseconds = timeoutMilliseconds;
+        this.coreSize = coreSize;
+        this.maximumSize = maximumSize;
+        this.maxQueueSize = maxQueueSize;
+        this.queueSizeRejectionThreshold = queueSizeRejectionThreshold;
+    }
+
     public String getGroupKey() {
         return groupKey;
     }
