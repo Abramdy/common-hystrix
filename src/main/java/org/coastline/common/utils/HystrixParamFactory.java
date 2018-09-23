@@ -11,23 +11,23 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class HystrixParamFactory {
 
-    private HystrixParam oneParam;
+    private static HystrixParam defaultParam;
 
     private static final Lock lock = new ReentrantLock();
 
     private HystrixParamFactory() {}
 
-    public HystrixParam getOneParam() {
-        if (oneParam == null) {
+    public static HystrixParam getDefaultParam() {
+        if (defaultParam == null) {
             lock.lock();
             try {
-                if (oneParam == null) {
-                    oneParam = new HystrixParam("oneGroup", "oneCommand", "oneThreadPool", 500, 50, 50, 10, 10);
+                if (defaultParam == null) {
+                    defaultParam = new HystrixParam("oneGroup", "oneCommand", "oneThreadPool", 500, 50, 50, 10, 10);
                 }
             } finally {
                 lock.unlock();
             }
         }
-        return oneParam;
+        return defaultParam;
     }
 }

@@ -6,7 +6,7 @@ package org.coastline.common.handler;
  */
 public interface HystrixHandler<T> {
 
-    T run();
+    T run() throws Exception;
 
     T fallback();
 
