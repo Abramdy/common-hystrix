@@ -1,3 +1,3 @@
 # common-hystrix
 
-### 简单封装 HystrixCommand
+### 封装 HystrixCommand
