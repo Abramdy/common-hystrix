@@ -4,8 +4,8 @@ import com.netflix.hystrix.*;
 import org.coastline.common.handler.HystrixHandler;
 
 /**
- * @author: Jay.H.Zou
- * @date: 2018/9/17
+ * @author Jay.H.Zou
+ * @date 2018/9/17
  */
 public class CommonHystrixCommand<T> extends HystrixCommand<T> {
 

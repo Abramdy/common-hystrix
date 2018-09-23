@@ -1,8 +1,8 @@
 package org.coastline.common.entity;
 
 /**
- * @author: Jay.H.Zou
- * @date: 2018/9/17
+ * @author Jay.H.Zou
+ * @date 2018/9/17
  */
 public class HystrixParam {
 

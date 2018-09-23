@@ -6,8 +6,8 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author: Jay.H.Zou
- * @date: 2018/9/17
+ * @author Jay.H.Zou
+ * @date 2018/9/17
  */
 public class HystrixParamFactory {
 
