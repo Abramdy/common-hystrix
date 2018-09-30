@@ -22,7 +22,7 @@ public class HystrixParamFactory {
             lock.lock();
             try {
                 if (defaultParam == null) {
-                    defaultParam = new HystrixParam("oneGroup", "oneCommand", "oneThreadPool", 500, 50, 50, 10, 10);
+                    defaultParam = new HystrixParam("defaultGroup", "defaultCommand", "defaultThreadPool", 500, 50, 50, 10, 10);
                 }
             } finally {
                 lock.unlock();
