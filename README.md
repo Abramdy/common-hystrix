@@ -18,12 +18,12 @@ String result = new CommonHystrixCommand<String>(new HystrixHandler<String>() {
 
     public String run() throws Exception {
         Thread.sleep(500);
-        return "firstService";
+        return "service";
     }
 
     public String fallback() {
         logger.error("First service error, go to second service.");
-        return "secondService";
+        return "fallback";
     }
 }, HystrixParamFactory.getDefaultParam()).queue().get(2000, TimeUnit.MILLISECONDS);
 

@@ -21,16 +21,21 @@ public class CommonHystrixCommandDemo {
         String result = new CommonHystrixCommand<String>(new HystrixHandler<String>() {
 
             public String run() throws Exception {
-                Thread.sleep(500);
+                System.out.println(Thread.currentThread().getName());
+                // Thread.sleep(500);
+                if (true) {
+                    throw new RuntimeException();
+                }
                 return "firstService";
             }
 
             public String fallback() {
-                logger.error("First service error, go to second service.");
+                logger.error("First service outor, go to second service.");
                 return "secondService";
             }
         }, HystrixParamFactory.getDefaultParam()).queue().get(2000, TimeUnit.MILLISECONDS);
 
         System.out.println("result: " + result);
     }
+
 }
